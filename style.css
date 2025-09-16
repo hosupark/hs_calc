@@ -142,7 +142,7 @@ button:hover {
   }
 }
 
-/* 💻 PC 확장 모드 (1200px 이상) */
+/* 💻 PC 확장 모드 (1200px 이상) 
 @media (min-width: 1200px) {
   .calculator {
     max-width: 800px;
@@ -152,4 +152,4 @@ button:hover {
     grid-template-columns: repeat(8, 1fr);
     gap: 12px;
   }
-}
+}*/
