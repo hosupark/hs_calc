@@ -41,11 +41,24 @@ body {
   color: #ff9500;
 }
 
-.buttons {
+/* 🔹 메인 영역 (숫자/연산 + 과학용 버튼) */
+.main-area {
+  display: flex;
+  flex-direction: column; /* 기본은 세로로 (모바일 세로) */
+}
+
+.keypad {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   padding: 15px;
+}
+
+.sci-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 10px;
 }
 
 button {
@@ -98,6 +111,19 @@ button:hover {
   margin-top: 0;
 }
 
+.clear-history {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.clear-history:hover {
+  opacity: 0.9;
+}
+
 /* 📱 모바일 세로 */
 @media (max-width: 480px) and (orientation: portrait) {
   body {
@@ -109,6 +135,14 @@ button:hover {
     max-width: 100%;
     margin-right: 0;
     margin-bottom: 15px;
+  }
+
+  .main-area {
+    flex-direction: column;
+  }
+
+  .sci-pad {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .history-panel {
@@ -133,8 +167,15 @@ button:hover {
     max-width: 700px;
   }
 
-  .buttons {
-    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  .main-area {
+    flex-direction: row; /* 가로 모드에서는 옆으로 */
+  }
+
+  .sci-pad {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
   }
 
   .scientific {
@@ -142,14 +183,20 @@ button:hover {
   }
 }
 
-/* 💻 PC 확장 모드 (1200px 이상) 
+/* 💻 PC 확장 모드 (1200px 이상) */
 @media (min-width: 1200px) {
   .calculator {
     max-width: 800px;
   }
 
-  .buttons {
-    grid-template-columns: repeat(8, 1fr);
-    gap: 12px;
+  .main-area {
+    flex-direction: row;
   }
-}*/
+
+  .sci-pad {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+  }
+}
