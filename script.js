@@ -35,3 +35,8 @@ function addHistory(record) {
   li.textContent = record;
   historyEl.prepend(li);
 }
+
+// 히스토리 지우기
+function clearHistory() {
+  historyEl.innerHTML = "";
+}
